@@ -3,7 +3,7 @@ AWSTemplateFormatVersion: "2010-09-09"
 Parameters:
 
   # Define subnets as parameters to
-  # simplify management
+  # simplify maintenance
 
   VPCCIDR:
     Type: String
@@ -133,6 +133,8 @@ Resources:
       InstanceType: t3.nano
       ImageId: ami-0b38d62acce7fb76a
       SubnetId: !Ref AppSubnet
+      SecurityGroupIds:
+        - !Ref AppSecurityGroup
 
   DBServer:
     Type: AWS::EC2::Instance
@@ -140,3 +142,5 @@ Resources:
       InstanceType: t3.nano
       ImageId: ami-0b38d62acce7fb76a
       SubnetId: !Ref DBSubnet
+      SecurityGroupIds:
+        - !Ref DBSecurityGroup
