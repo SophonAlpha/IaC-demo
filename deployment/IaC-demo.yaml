@@ -118,40 +118,12 @@ Resources:
 
   # Server instances
 
-  WebServer1:
+  WebServer:
     Type: AWS::EC2::Instance
     Properties:
       Tags:
         - Key: Name
-          Value: WebServer1
-        - Key: environment
-          Value: dev
-      InstanceType: t3.nano
-      ImageId: ami-0b38d62acce7fb76a
-      SubnetId: !Ref WebSubnet
-      SecurityGroupIds:
-        - !Ref WebSecurityGroup
-
-  WebServer2:
-    Type: AWS::EC2::Instance
-    Properties:
-      Tags:
-        - Key: Name
-          Value: WebServer2
-        - Key: environment
-          Value: dev
-      InstanceType: t3.nano
-      ImageId: ami-0b38d62acce7fb76a
-      SubnetId: !Ref WebSubnet
-      SecurityGroupIds:
-        - !Ref WebSecurityGroup
-
-  WebServer3:
-    Type: AWS::EC2::Instance
-    Properties:
-      Tags:
-        - Key: Name
-          Value: WebServer3
+          Value: WebServer
         - Key: environment
           Value: dev
       InstanceType: t3.nano
