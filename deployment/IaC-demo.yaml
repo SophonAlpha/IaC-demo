@@ -137,7 +137,21 @@ Resources:
     Properties:
       Tags:
         - Key: Name
-          Value: AppServer
+          Value: ProcServer
+        - Key: environment
+          Value: dev
+      InstanceType: t3.nano
+      ImageId: ami-0b38d62acce7fb76a
+      SubnetId: !Ref AppSubnet
+      SecurityGroupIds:
+        - !Ref AppSecurityGroup
+
+  MsgServer:
+    Type: AWS::EC2::Instance
+    Properties:
+      Tags:
+        - Key: Name
+          Value: MsgServer
         - Key: environment
           Value: dev
       InstanceType: t3.nano
